@@ -18,7 +18,7 @@
 		
 		<!-- Adding Logout button -->
 		
-		<form:form action="${pageContext.request.contextPath}/logoutUser" 
+		<form:form action="${pageContext.request.contextPath}/logout" 
 				   method="POST">
 		
 				<input type="submit" value="Logout"/>		
