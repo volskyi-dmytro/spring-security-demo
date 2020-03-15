@@ -25,9 +25,17 @@
 			 	Role(s):<security:authentication property="principal.authorities"/>   
 			
 			</p>
+			
+			<hr>
 		
+			<p>
+				<a href="${pageContext.request.contextPath}/leaders">LeaderShip Meeting</a>
+				(Only for Managers)
+			
+			</p>
 		
-		<hr>
+					
+			<hr>
 		
 		<!-- Adding Logout button -->
 		
