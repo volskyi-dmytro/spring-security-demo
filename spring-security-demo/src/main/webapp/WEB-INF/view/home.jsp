@@ -33,6 +33,12 @@
 				(Only for Managers)
 			
 			</p>
+			
+			<p>
+				<a href="${pageContext.request.contextPath}/system">IT Meeting</a>
+				(Only for Admins)
+			
+			</p>
 		
 					
 			<hr>
