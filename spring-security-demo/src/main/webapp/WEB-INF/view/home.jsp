@@ -27,21 +27,26 @@
 			</p>
 			
 			<hr>
-		
+			
+			<security:authorize access="hasRole('MANAGER')">		
 			<p>
 				<a href="${pageContext.request.contextPath}/leaders">LeaderShip Meeting</a>
 				(Only for Managers)
 			
 			</p>
+			</security:authorize>
 			
+			
+			<security:authorize access="hasRole('ADMIN')">
 			<p>
 				<a href="${pageContext.request.contextPath}/system">IT Meeting</a>
 				(Only for Admins)
 			
 			</p>
+			</security:authorize>
 		
 					
-			<hr>
+			
 		
 		<!-- Adding Logout button -->
 		
