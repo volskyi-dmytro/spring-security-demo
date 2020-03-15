@@ -1,5 +1,8 @@
 package com.stpunk47.springsecurity.demo.config;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,15 +15,16 @@ import org.springframework.security.core.userdetails.User.UserBuilder;
 @EnableWebSecurity
 public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 
+	//add a reference to security datasource
+	
+	@Autowired
+	private DataSource securityDataSource;
+	
+	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
-		UserBuilder users = User.withDefaultPasswordEncoder();
-		
-		auth.inMemoryAuthentication()
-		.withUser(users.username("user").password("test111").roles("USER"))
-		.withUser(users.username("manager").password("test111").roles("USER","MANAGER"))
-		.withUser(users.username("admin").password("admin").roles("USER","ADMIN"));
+		auth.jdbcAuthentication().dataSource(securityDataSource);
 	}
 
 	@Override

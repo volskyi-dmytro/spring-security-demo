@@ -91,7 +91,7 @@ public class DemoAppConfig {
 	}
 	
 	//helper method
-	//read environment property and conver to int
+	//read environment property and convert to int
 	
 	private int getIntProperty(String propName) {
 		
